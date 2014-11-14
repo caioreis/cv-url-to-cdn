@@ -113,9 +113,9 @@ function updateURLs(table, field, callback) {
   });
 }
 
-if process.argv.length < 3:
+if (process.argv.length < 3) {
   console.log("usage: " + process.argv[0] + " new_domain_with_protocol current_domain_with_protocol [current_domain_with_protocol2, ...]");
-else:
+} else {
   updateURLs('blogs', 'text', function () {
     updateURLs('projects', 'content', function () {
       pool.end(function (err) {
@@ -126,3 +126,4 @@ else:
       });
     });
   });
+}
